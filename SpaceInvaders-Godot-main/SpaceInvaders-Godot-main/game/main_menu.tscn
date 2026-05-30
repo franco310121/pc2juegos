@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bli2g4fvdy4ts"]
+
+[ext_resource type="Script" uid="uid://b5q10uh6q73tq" path="res://game/main_menu.gd" id="1_2gctw"]
+[ext_resource type="Texture2D" uid="uid://drnslwr1gira5" path="res://assets/Space_Stars2.png" id="2_20tr2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20tr2"]
+bg_color = Color(0.6, 0.6, 0.47843137, 0.35686275)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ed8k"]
+bg_color = Color(0.6, 0.6, 0.47843137, 0.35686275)
+
+[node name="MainMenu" type="Control" unique_id=366826207]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2gctw")
+
+[node name="Background" type="TextureRect" parent="." unique_id=375211108]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_20tr2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=378386077]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1518580131]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "SPACE 
+INVADERS"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=2018172201]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_20tr2")
+text = "JUGAR"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=956990040]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ed8k")
+text = "SALIR"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
