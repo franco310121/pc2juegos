@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b5q10uh6q73tq" path="res://game/main_menu.gd" id="1_2gctw"]
 [ext_resource type="Texture2D" uid="uid://drnslwr1gira5" path="res://assets/Space_Stars2.png" id="2_20tr2"]
+[ext_resource type="AudioStream" uid="uid://cpnm6g7oswe5f" path="res://music/backgroundmusic.mp3" id="3_2ed8k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20tr2"]
 bg_color = Color(0.6, 0.6, 0.47843137, 0.35686275)
@@ -71,5 +72,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_2ed8k")
 text = "SALIR"
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=1825156420]
+stream = ExtResource("3_2ed8k")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

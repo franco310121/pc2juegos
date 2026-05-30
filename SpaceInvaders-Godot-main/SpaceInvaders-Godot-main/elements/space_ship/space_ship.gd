@@ -5,6 +5,8 @@ const ROCKET_SCENE = preload("res://elements/rocket/rocket.tscn")
 const MAX_SPEED = 140.0
 const ACCELERATION = 0.03 # Factor de respuesta (0.0 a 1.0)
 
+@onready var shoot_sound = $ShootSound
+
 func _physics_process(delta: float):
 	if Input.is_action_just_pressed("ui_accept"):
 		shot()
@@ -22,7 +24,11 @@ func _physics_process(delta: float):
 func shot():
 	var rocket = ROCKET_SCENE.instantiate()
 	rocket.global_position = global_position + Vector2(0, -30)
-	add_child(rocket)
+	get_tree().current_scene.add_child(rocket)
+	
+	# Reproducir sonido de disparo
+	if shoot_sound:
+		shoot_sound.play()
 
 func take_damage():
 	Globals.change_lives(-1)

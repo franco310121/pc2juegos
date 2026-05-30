@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbmspky0nvucp"]
+[gd_scene format=3 uid="uid://bbmspky0nvucp"]
 
 [ext_resource type="Script" uid="uid://wmla5bgn3506" path="res://elements/enemy/enemy.gd" id="1_6lgxk"]
 [ext_resource type="Texture2D" uid="uid://ba7uypn7qp66w" path="res://assets/godot-invader-small.png" id="1_n8175"]
+[ext_resource type="AudioStream" uid="uid://u34fwghktcwd" path="res://music/explosion.mp3" id="3_ek21h"]
 
 [sub_resource type="Gradient" id="Gradient_j4vrh"]
 offsets = PackedFloat32Array(0.161137, 0.476987, 0.995261, 1)
@@ -38,12 +39,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_vle8u"]
 radius = 9.0
 
-[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+[node name="Enemy" type="CharacterBody2D" unique_id=1314031392 groups=["enemy"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_6lgxk")
 
-[node name="ExplosionParticles" type="CPUParticles2D" parent="."]
+[node name="ExplosionParticles" type="CPUParticles2D" parent="." unique_id=1015198915]
 top_level = true
 z_index = 10
 emitting = false
@@ -59,16 +60,19 @@ initial_velocity_min = 100.0
 initial_velocity_max = 150.0
 color = Color(0.305882, 0.866667, 0.835294, 1)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=497032657]
 sprite_frames = SubResource("SpriteFrames_72eja")
 autoplay = "default"
 frame_progress = 0.493492
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=765229798]
 shape = SubResource("CircleShape2D_vle8u")
 
-[node name="RayCastLeft" type="RayCast2D" parent="."]
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1843958894]
 target_position = Vector2(-15, 0)
 
-[node name="RayCastRight" type="RayCast2D" parent="."]
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1474884107]
 target_position = Vector2(15, 0)
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="." unique_id=535487377]
+stream = ExtResource("3_ek21h")

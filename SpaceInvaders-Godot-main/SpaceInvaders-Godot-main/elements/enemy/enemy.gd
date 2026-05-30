@@ -13,15 +13,21 @@ func _physics_process(delta):
 func destroy():
 	Globals.change_points(1)
 	Events.enemy_died.emit()
+	
+	# Posicionar partículas
 	explosion_particles.global_position = global_position
+	
+	# NUEVO: Reproducir sonido de explosión
+	if $ExplosionSound:
+		$ExplosionSound.play()
 	
 	set_physics_process(false)
 	$CollisionShape2D.set_deferred("disabled", true)
 	$AnimatedSprite2D.visible = false
+	
 	explosion_particles.emitting = true
 	
 	await get_tree().create_timer(explosion_particles.lifetime).timeout
-	
 	queue_free()
 
 func shot():
