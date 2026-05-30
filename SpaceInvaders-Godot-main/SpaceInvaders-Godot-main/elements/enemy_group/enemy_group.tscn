@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://f1c2mo3r7snn"]
 
-[ext_resource type="Script" path="res://elements/enemy_group/enemy_group.gd" id="1_1c4wc"]
+[ext_resource type="Script" uid="uid://ciko6mf10j37t" path="res://elements/enemy_group/enemy_group.gd" id="1_1c4wc"]
 [ext_resource type="PackedScene" uid="uid://bbmspky0nvucp" path="res://elements/enemy/enemy.tscn" id="1_qg0c1"]
 
 [node name="EnemyGroup" type="Node2D" groups=["enemy_group"]]

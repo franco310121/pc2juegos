@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bbmspky0nvucp"]
 
-[ext_resource type="Script" path="res://elements/enemy/enemy.gd" id="1_6lgxk"]
+[ext_resource type="Script" uid="uid://wmla5bgn3506" path="res://elements/enemy/enemy.gd" id="1_6lgxk"]
 [ext_resource type="Texture2D" uid="uid://ba7uypn7qp66w" path="res://assets/godot-invader-small.png" id="1_n8175"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fo7yi"]
