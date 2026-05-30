@@ -1,7 +1,7 @@
 extends Node2D
 
 const ROW_STEP = 10.0
-const SPEED_BOOST := 5.5
+const SPEED_BOOST := 3.5
 
 @onready var block_timer := $BlockTimer
 @onready var shot_timer := $ShotTimer
